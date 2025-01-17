@@ -1,0 +1,616 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: serif;
+}
+
+/* STYLE NAVBAR
+ La barre de navigation a 
+ un fond noir et une hauteur de 80px, positionnée de 
+ manière fixe en haut de la page. Les liens de menu 
+ sont alignés à droite, en blanc, avec une taille de
+ police de 20px et gras. Lorsque survolés, les liens
+ changent de couleur en gris clair . 
+ Le style navbar0 est caché .*/
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #000;
+  height: 80px;
+  width: 100%;
+  align-items: center;
+  position: fixed;
+}
+
+.logo {
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+
+}
+
+.pl {
+  width: 6em;
+  height: 6em;
+}
+
+.pl__ring {
+  animation: ringA 2s linear infinite;
+}
+
+.pl__ring--a {
+  stroke: #f42f25;
+}
+
+.pl__ring--b {
+  animation-name: ringB;
+  stroke: #f49725;
+}
+
+.pl__ring--c {
+  animation-name: ringC;
+  stroke: #255ff4;
+}
+
+.pl__ring--d {
+  animation-name: ringD;
+  stroke: #f42582;
+}
+
+/* Animations */
+@keyframes ringA {
+
+  from,
+  4% {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -330;
+  }
+
+  12% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -335;
+  }
+
+  32% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -595;
+  }
+
+  40%,
+  54% {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -660;
+  }
+
+  62% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -665;
+  }
+
+  82% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -925;
+  }
+
+  90%,
+  to {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -990;
+  }
+}
+
+@keyframes ringB {
+
+  from,
+  12% {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -110;
+  }
+
+  20% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -115;
+  }
+
+  40% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -195;
+  }
+
+  48%,
+  62% {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+
+  70% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+
+  90% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -305;
+  }
+
+  98%,
+  to {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -330;
+  }
+}
+
+@keyframes ringC {
+  from {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: 0;
+  }
+
+  8% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -5;
+  }
+
+  28% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -175;
+  }
+
+  36%,
+  58% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+
+  66% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+
+  86% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -395;
+  }
+
+  94%,
+  to {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -440;
+  }
+}
+
+@keyframes ringD {
+
+  from,
+  8% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: 0;
+  }
+
+  16% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -5;
+  }
+
+  36% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -175;
+  }
+
+  44%,
+  50% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+
+  58% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+
+  78% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -395;
+  }
+
+  86%,
+  to {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -440;
+  }
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 50px;
+  transition: all ease-in-out 0.5s;
+  cursor: pointer;
+  transform: translateY(-3px);
+
+}
+
+.menu a:hover {
+  color: #636e72;
+
+
+}
+
+.menu .active {
+  color: #636e72;
+}
+
+.navbar0 {
+  display: none;
+}
+
+/*style sectiion 1
+ une section avec une image de fond, 
+ du texte animé et un bouton stylisé. La section a une 
+ hauteur de 800px et le texte est centré verticalement 
+ avec un effet de clignotement. Le bouton a un effet de
+ défilement lors du survol de la souris.
+ */
+.section_1 {
+  background-image: url(https://images.unsplash.com/photo-1523522484701-76ae015df9e6?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 800px;
+}
+
+.contenu_1 {
+  padding-top: 400px;
+  text-align: center;
+  align-items: center;
+  font-weight: bold;
+
+}
+
+.bienvenue {
+  animation: flash 1.5s linear infinite;
+  font-size: 50px;
+}
+
+.devise {
+  font-size: 40px;
+}
+
+
+@keyframes flash {
+  0% {
+    color: black;
+    text-shadow: 0 0 20px black;
+  }
+
+  50% {
+    color: black;
+    text-shadow: none;
+    text-shadow: 0 0 10px black;
+  }
+
+  100% {
+    color: black;
+    text-shadow: 0 0 5px black;
+  }
+}
+
+.devise {
+  animation: flash_0 1.5s linear infinite;
+}
+
+@keyframes flash_0 {
+  0% {
+    color: #2d3436;
+    text-shadow: 0 0 20px #636e72;
+  }
+
+  50% {
+    color: #2d3436;
+    text-shadow: none;
+    text-shadow: 0 0 10px #2d3436;
+  }
+
+  100% {
+    color: #2d3436;
+    text-shadow: 0 0 5px #636e72;
+  }
+}
+
+
+button {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 500px;
+  overflow: hidden;
+  background: #2d3436;
+  color: ghostwhite;
+
+}
+
+button span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+}
+
+button:hover span {
+  color: black;
+}
+
+button::before,
+button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+button::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+button:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+/*style sectiion 2
+    Il donne une marge intérieure en haut de 100px, 
+    un fond de couleur noire, un texte de couleur blanche, 
+    un affichage en flexbox avec un espacement entre 
+    les éléments, et une marge intérieure de 50px en haut 
+    et en bas et de 100px à gauche et à droite.
+*/
+.section_2 {
+  position: relative;
+  padding-top: 100px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 100px;
+}
+
+.titre_2 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.texte_2 {
+  font-size: 25px;
+}
+
+/*style sectiion 3
+ . Il attribue une image d'arrière-plan située dans le 
+ dossier "photo" et nommée "Humaaans - Study Online.png". 
+ L'image est affichée une seule fois sans se répéter, 
+ elle est ajustée pour couvrir entièrement la section 
+ et est centrée. La section a une largeur de 70% de la 
+ largeur de son conteneur et une hauteur de 600 pixels. 
+ Elle est décalée de 200 pixels vers la gauche par rapport à sa position normale.
+*/
+.section_3 {
+  background-image: url(./photo/Humaaans\ -\ Study\ Online.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 70%;
+  height: 600px;
+  margin-left: 200px;
+  text-align: center;
+
+  padding-top: 150px;
+
+}
+
+.nom_de_event3 {
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+}
+
+.evenement_3 {
+  font-size: 25px;
+  padding-top: 25px;
+
+}
+
+/*style sectiion 4*/
+.section_4 {
+  background-image: url(./photo/croix.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 70%;
+  height: 600px;
+  margin-left: 200px;
+  padding-top: 200px;
+}
+
+.photo1 {
+  height: 400px;
+  width: 400px;
+}
+
+.VERSET {
+  font-size: 50px;
+  align-items: center;
+  text-align: center;
+}
+
+.du_jour {
+  font-size: 25px;
+  align-items: center;
+  text-align: center;
+  margin: 0 50px;
+}
+
+@media only screen and (min-width:320px) and (max-width:1200px) {
+  .navBar {
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu ul {
+    display: none;
+  }
+
+  .navbar0 {
+    display: block;
+    float: left;
+    width: 200px;
+  }
+
+  .navBar .logo h1 {
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  /*style sectiion 1*/
+  .section_1 {
+    width: 1200px;
+  }
+
+  .bienvenue {
+    font-size: 70px;
+  }
+
+  .devise {
+    font-size: 50px;
+  }
+
+  button {
+    font-size: 50px;
+  }
+
+  button span {
+    font-size: 50px;
+  }
+
+  /*style sectiion 2*/
+  .section_2 {
+    width: 1200px;
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .titre_2 {
+    font-size: 90px;
+  }
+
+  .texte_2 {
+    font-size: 70px;
+  }
+
+
+  /*style sectiion 3*/
+  .section_3 {
+    width: 1200px;
+    margin: 0 0px;
+    height: 2300px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nom_de_event3 {
+    width: 1200px;
+    font-size: 90px;
+    font-weight: bold;
+  }
+
+  .evenement_3 {
+    width: 1200px;
+    font-size: 70px;
+    padding-top: 50px;
+  }
+
+  /*style sectiion 4*/
+  .section_4 {
+    width: 900px;
+    height: 1300px;
+  }
+
+  .VERSET {
+    font-size: 90px;
+  }
+
+  .du_jour {
+    font-size: 70px;
+  }
+
+  /*footer*/
+
+  footer {
+    padding-top: 190px;
+    width: 1200px;
+    text-align: center;
+    align-items: center;
+    font-size: 50px;
+  }
+
+  .texte_3 {
+    font-size: 70px;
+  }
+
+  .icon {
+    height: 50px;
+    width: 50px;
+  }
+
+  .texteF {
+    font-size: 50px;
+  }
+
+}
